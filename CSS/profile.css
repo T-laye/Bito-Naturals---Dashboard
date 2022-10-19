@@ -1,0 +1,271 @@
+.profile-section {
+  padding: 4rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  background: linear-gradient(
+      to top,
+      var(--primary-background-color-gradient),
+      var(--secondary-background-color-gradient)
+    ),
+    url(../img/logan-weaver-lgnwvr-yRpe13BHdKw-unsplash.jpg);
+  background-position: top;
+  background-repeat: none;
+  background-size: cover;
+}
+
+header {
+  background-color: var(--primary-background-color);
+}
+
+.user-info {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.greeting {
+  text-align: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  color: var(--primary-background-color);
+}
+
+.profile-pic-wrapper {
+  height: 30rem;
+  width: 30rem;
+  position: relative;
+  border-radius: 5px solid #fff;
+  border-radius: 50%;
+  background-color: #bbb;
+  background-size: 100% 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  transform: scale(0.8);
+}
+
+#profile-display-image {
+  height: 100%;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-pic-div {
+  height: 20rem;
+  width: 20rem;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid grey;
+  background-color: #bbb;
+  align-self: center;
+}
+
+#photo {
+  height: 100%;
+  width: 100%;
+}
+
+#file {
+  display: none;
+}
+
+#uploadBtn {
+  height: 4rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: rgb(0, 0, 0, 0.7);
+  color: #bbb;
+  line-height: 30px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 40rem;
+  height: auto;
+  font-family: inherit;
+  margin-top: 4rem;
+}
+
+legend {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 4rem;
+  color: #fff;
+}
+
+form input {
+  border: none;
+  border-radius: 1rem;
+  height: auto;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  text-transform: lowercase;
+}
+
+form .name,
+.btn {
+  text-transform: capitalize;
+}
+
+form input::-webkit-input-placeholder {
+  font-size: 1.4rem;
+}
+
+form input::-moz-placeholder {
+  font-size: 1.4rem;
+}
+
+form input:-ms-input-placeholder {
+  font-size: 1.4rem;
+}
+
+form input::-ms-input-placeholder {
+  font-size: 1.4rem;
+}
+
+form input::placeholder {
+  font-size: 1.4rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.hide-form {
+  display: none;
+  opacity: 0;
+}
+
+.profile-content {
+  padding: 2rem 3rem;
+  /* background-color: #1f031f; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 3rem;
+  height: 100%;
+  width: 60%;
+}
+
+.profile-content div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+  padding: 2rem 3rem;
+  background-color: var(--secondary-background-color);
+  /* background-color: #bbb; */
+  box-shadow: 0 5px 10px #00000052;
+  border-radius: 5rem;
+  /* background: linear-gradient(to top, #631563, #6d506d) no-repeat 0 0 / cover; */
+}
+
+.profile-content .book {
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--primary-background-color);
+  color: #fff;
+  /* font-weight: 600; */
+  font-size: 1.4rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 10rem;
+  align-self: center;
+}
+
+.profile-content .book:hover {
+  transform: scale(1.1);
+}
+
+.profile-content .book:active {
+  transform: translateY(2px);
+}
+
+/* Booking form */
+
+.booking-form {
+  /* display: none; */
+  height: 90vh;
+  width: 40rem;
+  background-color: rgba(6, 7, 7, 0.5);
+  position: absolute;
+  top: 7rem;
+  right: 0;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease-in-out;
+  transform: translateX(100%);
+}
+.hidden-form {
+  transition: all 0.5s ease-in-out;
+  /* display: block; */
+  transform: translateX(0);
+}
+.schedules {
+  color: #fff;
+  /* margin: 1rem; */
+  padding: 0rem 2rem;
+  border: 2px solid var(--primary-background-color);
+}
+.schedules h2,
+.schedules h3 {
+  margin: 0 1rem 1rem 1rem;
+  color: var(--secondary-background-color);
+  text-align: center;
+}
+.schedules p {
+  text-align: center;
+  line-height: 3rem;
+}
+fieldset {
+  padding: 2rem;
+  margin: 1rem 2rem;
+  display: flex;
+  gap: 2rem;
+}
+.book-now input {
+  width: 27rem;
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: none;
+}
+.submit {
+  background-color: var(--primary-background-color);
+  cursor: pointer;
+  padding: 3rem 0;
+  border: none;
+  color: #fff;
+}
+.book-now textarea {
+  width: 27rem;
+  padding: 0.5rem 1rem;
+}
+.close-icon {
+  font-size: 4rem;
+  color: var(--primary-background-color);
+}
+.schedules-icon {
+  text-align: right;
+}

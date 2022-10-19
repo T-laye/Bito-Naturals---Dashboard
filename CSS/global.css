@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(
+      to top,
+      var(--primary-background-color-gradient),
+      var(--secondary-background-color-gradient)
+    ),
+    url(../img/logan-weaver-lgnwvr-yRpe13BHdKw-unsplash.jpg);
+  background-position: top;
+  background-repeat: none;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  height: 7rem;
+  color: var(--primary-background-color);
+  box-shadow: 0px 0.5px 2px 0.5px #0f0d0f;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.company-name {
+  color: #fff;
+}
+
+.btn {
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--primary-background-color);
+  color: #fff;
+  border: none;
+  /* font-weight: 600; */
+  font-size: 1.6rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 50%;
+  align-self: center;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+section {
+  display: none;
+}
+
+.display--section {
+  display: block;
+}
