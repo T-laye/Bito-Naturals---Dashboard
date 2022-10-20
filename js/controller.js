@@ -116,7 +116,6 @@ const products = [
   },
 ];
 
-// console.log(data.price);
 function addMarkUp(product) {
   product.forEach((value, i, _) => {
     const html = `
@@ -142,7 +141,7 @@ function addMarkUp(product) {
   });
 }
 addMarkUp(products);
-// updateTotal();
+
 //////////////////////////////////////
 // Adding to cart
 const cartBtn = document.querySelectorAll(".btn--cart");
@@ -158,12 +157,7 @@ function addToCartClicked(e) {
     const image = shopNow.getElementsByClassName("image")[i].src;
     const price = shopNow.getElementsByClassName("price")[i].innerText;
 
-    //   const title = value.name;
-    //   const image = value.image;
-    //   const price = value.price;
-
     addItemToCart(title, price, image);
-    console.log(price);
     updateTotal();
   });
 }
@@ -211,7 +205,6 @@ function addItemToCart(title, price, image) {
 
   cartRow.innerHTML = html;
   cartItems.append(cartRow);
-  // updateTotal();
 }
 
 function updateTotal() {
@@ -224,13 +217,12 @@ function updateTotal() {
   qtyContainer.forEach((container, i) => {
     container.addEventListener("change", (e) => {
       const qty = e.target.closest(".qty-input");
-      // const p = e.target.parentElement.parentElement.next(".price");
-      cartPrice.forEach((p, c) => {
-        if (c === i) {
-          const newTotal = +qty.value * +p.textContent;
+      cartPrice.forEach((pr, p) => {
+        if (p === i) {
+          const newTotal = +qty.value * +pr.textContent;
 
           totals.forEach((total, t) => {
-            if (t === i && t === c) total.textContent = newTotal;
+            if (t === i && t === p) total.textContent = newTotal;
             console.log(newTotal);
           });
         }
@@ -238,63 +230,3 @@ function updateTotal() {
     });
   });
 }
-
-// const btnAdd = document.querySelectorAll(".btn-add");
-// const btnMinus = document.getElementsByClassName("btn-minus");
-// let qtyInpFields = document.querySelector(".qty-input");
-// let total = document.querySelector(".total");
-// const price = document.querySelectorAll(".cartPrice");
-
-// function updateTotal() {
-//   qtyContainer.forEach((container, i) => {
-//     container.addEventListener("change", (e) => {
-//       const qty = e.target.closest(".qty-input");
-//       // const p = e.target.parentElement.parentElement.next(".price");
-//       price.forEach((p, c) => {
-//         if (c === i) {
-//           const newTotal = +qty.value * +p.textContent;
-
-//           total.textContent = newTotal;
-//           console.log(newTotal);
-//         }
-//       });
-//     });
-//   });
-// }
-// updateTotal();
-
-// console.log(qtyContainer);
-// qtyContainer.forEach((container) => {
-//   container.addEventListener("click", (e) => {
-//     const clicked = e.target.closest("button");
-//     if (!clicked) return;
-//     // console.log(clicked);
-//     if (clicked.classList.contains("btn-add"))
-//       clicked.addEventListener("click", function (b) {
-//         b.preventDefault();
-//         let qty = +b.target.closest(".qty-input");
-
-//         qty++;
-
-//         qtyInpFields.textContent = qty;
-//         console.log(qty);
-//       });
-//   });
-// });
-
-// }
-
-// btnAdd.forEach((btn) => {
-//   btn.addEventListener("click", function (b) {
-//     // btnAdd.target.parentElement.classList.add("j");
-//     // b.target.;
-//     // let one = 1;
-//     // ++one;
-//     let v = +b.target.parentElement.childNodes[3].textContent + 1;
-
-//     // v = b.target.parentElement.childNodes[3].textContent;
-
-//     console.log(v);
-//     console.log(typeof +b.target.parentElement.childNodes[3].textContent);
-//   });
-// });
