@@ -142,7 +142,7 @@ function addMarkUp(product) {
   });
 }
 addMarkUp(products);
-
+// updateTotal();
 //////////////////////////////////////
 // Adding to cart
 const cartBtn = document.querySelectorAll(".btn--cart");
@@ -163,28 +163,20 @@ function addToCartClicked(e) {
     //   const price = value.price;
 
     addItemToCart(title, price, image);
-
-    // const qtyInp = document.querySelector(".qty-input");
-    // const priceA = +document.querySelector(".price").textContent.slice(6, -1);
-    // const total = +document.querySelector(".total").textContent;
-
-    // console.log(qtyInp, +priceA, total);
-
-    // qtyInp.addEventListener("change", () => {
-    //   let totalPrice = +qtyInp.value * priceA;
-
-    //   total.textContent = totalPrice;
-    //   console.log(totalPrice);
-    // });
+    console.log(price);
+    updateTotal();
   });
 }
 
 function addItemToCart(title, price, image) {
   const cartRow = document.createElement("tr");
   const cartItems = document.getElementsByClassName("table-body")[0];
+
+  const actPrice = price.slice(6, -1);
+
   const html = `<tr class="tab-row">
   <td>
-    <div class="cart-product-details">
+  <div class="cart-product-details">
     <div class="cart-image-container">
       <img src="${image}" alt="" />
     </div>
@@ -197,25 +189,112 @@ function addItemToCart(title, price, image) {
   </div>
   </td>
 
-<td>
-  <div class="quantity">
-    <input class="qty-input" min="1" value="1" type="number" /> 
-  </div>
-</td>
-
+   <td>
+      <div class="quantity">
+        <input class="qty-input" min="1" value="1" type="number" /> 
+      </div>
+    </td>
+  
   <td>
-     <span class="price">${price.slice(6, -1)}</span>
+     <span class="cartPrice">${actPrice}</span>
   </td>
-    
+  
   <td>
-    <span class="total">${price.slice(6, -1)}</span>
+  <span class="total">${actPrice}</span>
   </td>
-
+  
   <td>
-    <button>Order Now</button>
+  <button class="order">Order Now</button>
+  <button class="delete">🛒</button>
   </td>
-</tr>`;
+  </tr>`;
 
   cartRow.innerHTML = html;
   cartItems.append(cartRow);
+  // updateTotal();
 }
+
+function updateTotal() {
+  const qtyContainer = document.querySelectorAll(".quantity");
+  let totals = document.querySelectorAll(".total");
+  const cartPrice = document.querySelectorAll(".cartPrice");
+
+  console.log(qtyContainer);
+
+  qtyContainer.forEach((container, i) => {
+    container.addEventListener("change", (e) => {
+      const qty = e.target.closest(".qty-input");
+      // const p = e.target.parentElement.parentElement.next(".price");
+      cartPrice.forEach((p, c) => {
+        if (c === i) {
+          const newTotal = +qty.value * +p.textContent;
+
+          totals.forEach((total, t) => {
+            if (t === i && t === c) total.textContent = newTotal;
+            console.log(newTotal);
+          });
+        }
+      });
+    });
+  });
+}
+
+// const btnAdd = document.querySelectorAll(".btn-add");
+// const btnMinus = document.getElementsByClassName("btn-minus");
+// let qtyInpFields = document.querySelector(".qty-input");
+// let total = document.querySelector(".total");
+// const price = document.querySelectorAll(".cartPrice");
+
+// function updateTotal() {
+//   qtyContainer.forEach((container, i) => {
+//     container.addEventListener("change", (e) => {
+//       const qty = e.target.closest(".qty-input");
+//       // const p = e.target.parentElement.parentElement.next(".price");
+//       price.forEach((p, c) => {
+//         if (c === i) {
+//           const newTotal = +qty.value * +p.textContent;
+
+//           total.textContent = newTotal;
+//           console.log(newTotal);
+//         }
+//       });
+//     });
+//   });
+// }
+// updateTotal();
+
+// console.log(qtyContainer);
+// qtyContainer.forEach((container) => {
+//   container.addEventListener("click", (e) => {
+//     const clicked = e.target.closest("button");
+//     if (!clicked) return;
+//     // console.log(clicked);
+//     if (clicked.classList.contains("btn-add"))
+//       clicked.addEventListener("click", function (b) {
+//         b.preventDefault();
+//         let qty = +b.target.closest(".qty-input");
+
+//         qty++;
+
+//         qtyInpFields.textContent = qty;
+//         console.log(qty);
+//       });
+//   });
+// });
+
+// }
+
+// btnAdd.forEach((btn) => {
+//   btn.addEventListener("click", function (b) {
+//     // btnAdd.target.parentElement.classList.add("j");
+//     // b.target.;
+//     // let one = 1;
+//     // ++one;
+//     let v = +b.target.parentElement.childNodes[3].textContent + 1;
+
+//     // v = b.target.parentElement.childNodes[3].textContent;
+
+//     console.log(v);
+//     console.log(typeof +b.target.parentElement.childNodes[3].textContent);
+//   });
+// });
