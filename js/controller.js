@@ -146,29 +146,33 @@ addMarkUp(products);
 // Adding to cart
 const cartBtn = document.querySelectorAll(".btn--cart");
 const cartSection = document.querySelector(".table-body");
+let arr = [];
 
 prodContainer.addEventListener("click", addToCartClicked);
 
 function addToCartClicked(e) {
   products.forEach((value, i, _) => {
     const button = e.target.closest(".btn--cart");
+    if (!button) return;
     const shopNow = button.parentElement.parentElement.parentElement;
     const title = shopNow.getElementsByClassName("title")[i].innerText;
     const image = shopNow.getElementsByClassName("image")[i].src;
     const price = shopNow.getElementsByClassName("price")[i].innerText;
 
     addItemToCart(title, price, image);
+
     updateTotal();
   });
 }
 
 function addItemToCart(title, price, image) {
-  const cartRow = document.createElement("tr");
   const cartItems = document.getElementsByClassName("table-body")[0];
+  const cartRow = document.createElement("tr");
+  cartRow.classList.add("tabRow");
 
   const actPrice = price.slice(6, -1);
 
-  const html = `<tr class="tab-row">
+  const html = `<tr class="tabRow">
   <td>
   <div class="cart-product-details">
     <div class="cart-image-container">
@@ -199,20 +203,54 @@ function addItemToCart(title, price, image) {
   
   <td>
   <button class="order">Order Now</button>
-  <button class="delete">🛒</button>
   </td>
   </tr>`;
 
   cartRow.innerHTML = html;
   cartItems.append(cartRow);
+
+  // const rows = document.querySelectorAll(".tabRow");
+  // const delbtns = document.querySelector(".delete");
+
+  // // console.log(rows);
+  // // console.log(btn);
+
+  // delbtns.forEach((btn, b) => {
+  //   btn.addEventListener("click", (e) => {
+  //     rows.forEach((row, r) => {
+  //       // if (r === b) {
+  //       console.log(row, "yes")
+  //       // }
+  //       //   if(b === r)
+  //       // }
+  //     });
+  //   });
+  // });
+  const deleteBtn = document.getElementsByClassName("delete");
+  //   del((deleteNow, i) => {
+  //     const button = deleteNow[i];
+  //     button.addEventListener("click", function (e) {
+  //       // e.target.closest("tr").parentElement.childNodes[5].remove();
+  //       console.log("click");
+  //     });
+  //   });
+  console.log();
+  for (let i = 0; i < deleteBtn.length; i++) {
+    const button = deleteBtn[i];
+    button.addEventListener("click", function (e) {
+      const btnClicked = e.target;
+      btnClicked.parentElement.parentElement.parentElement.remove();
+
+      console.log("clc");
+      console.log(btnClicked.parentElement.parentElement);
+    });
+  }
 }
 
 function updateTotal() {
   const qtyContainer = document.querySelectorAll(".quantity");
   let totals = document.querySelectorAll(".total");
   const cartPrice = document.querySelectorAll(".cartPrice");
-
-  console.log(qtyContainer);
 
   qtyContainer.forEach((container, i) => {
     container.addEventListener("change", (e) => {
@@ -223,7 +261,6 @@ function updateTotal() {
 
           totals.forEach((total, t) => {
             if (t === i && t === p) total.textContent = newTotal;
-            console.log(newTotal);
           });
         }
       });
