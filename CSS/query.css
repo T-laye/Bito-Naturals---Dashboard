@@ -1,4 +1,17 @@
-/* Profile Query */
+/*********************************/
+
+/* At 1125px */
+@media screen and (max-width: 72em) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+    /* justify-content: center; */
+    gap: 6rem 1rem;
+  }
+  .products {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 
 /* At 950px */
 @media screen and (max-width: 60em) {
@@ -17,6 +30,18 @@
 
   .profile-content {
     padding-top: 10%;
+  }
+}
+
+/* At 940px */
+@media screen and (max-width: 59em) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 6rem 1rem;
+  }
+  .products {
+    width: 70%;
   }
 }
 
@@ -63,6 +88,21 @@
   }
 }
 
+/* At 710px */
+@media screen and (max-width: 45em) {
+  .products-container {
+    /* grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 6rem 1rem;
+  }
+  .products {
+    width: 50%;
+  }
+}
+
 /* At 600px */
 @media screen and (max-width: 38em) {
   .profile-section {
@@ -94,9 +134,8 @@
     align-items: center;
   }
 }
-
-/* At 420px */
-@media screen and (max-width: 26em) {
+/* At 450px */
+@media screen and (max-width: 28em) {
   .header-container {
     padding: 1.4rem;
   }
@@ -108,6 +147,13 @@
     font-size: 2rem;
   }
 
+  .products {
+    width: 70%;
+  }
+}
+
+/* At 420px */
+@media screen and (max-width: 26em) {
   .mini-menu-items {
     top: 100%;
     right: 15%;

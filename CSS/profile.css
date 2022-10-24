@@ -54,7 +54,7 @@ header {
   width: 100%;
 }
 
-form {
+.profile-form {
   display: flex;
   flex-direction: column;
 }
@@ -95,11 +95,11 @@ form {
   display: none;
 }
 
-fieldset {
+.profile-form fieldset {
   display: flex;
   flex-direction: column;
   border: none;
-  width: 40rem;
+  width: 70%;
   height: auto;
   font-family: inherit;
   margin-top: 4rem;
@@ -246,6 +246,9 @@ textarea:focus {
   padding: 2rem;
   margin: 1rem 2rem;
   display: flex;
+  flex-direction: column;
+  border: none;
+  width: 100%;
   gap: 2rem;
 }
 .book-now input {

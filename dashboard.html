@@ -177,7 +177,7 @@
       </section>
 
 
-      <section class="section catalogue  content--3">
+      <section class="section catalogue container  content--3">
           <h2>
             <span><ion-icon name="pricetags-outline"></ion-icon></span>
             Products Catalogue
@@ -295,6 +295,45 @@
                   </tr> -->
                  </tbody>
               </table> 
+
+    <!-- OrderNow slidein//////////////// -->
+            <div class="order-container">
+              
+              <div class="order-image">
+
+                <div class="order-close-icon">
+
+                  <ion-icon name="close-circle-outline"  class="close-icon" ></ion-icon>
+                </div>
+                <!-- <img src="./img/denisse-leon-udFxtLRzB0A-unsplash.jpg" alt=""> -->
+              </div>
+              
+              <form action="#" class="order-form">
+
+                <div class="order-content">
+                  <h2>  Order Summary</h2>
+                  
+                  <fieldset class="order-input" >
+
+                    <input class="customerName" type="text"  placeholder="Name">
+                    <input type="tel" class="customerNumber"  placeholder="Phone number">
+                    <input type="number" class="qtyOrdered" placeholder="Quantity" readonly>
+                    <input type="text" class="productOrdered"  placeholder="Product Name" readonly>
+                  </fieldset>
+
+            
+          <div class="price-display">
+            <p>Total cost: $<span class="orderTotal">600</span> </p>
+          </div>
+
+          <button type="submit" class="btn payment-btn">Place Order</button>
+          <!-- <button class="cancel-btn">Cancel Order</button> -->
+
+          </div>
+          </form>
+
+
+          </div>
       </section>
     </main>
     <!-- //////////////////// -->
