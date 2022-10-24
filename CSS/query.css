@@ -100,34 +100,49 @@
   .header-container {
     padding: 1.4rem;
   }
-  nav ul li span {
+  nav ul li .menuName {
     display: none;
   }
 
-  nav ul li ion-icon {
-    font-size: 1.9rem;
+  nav ul li a ion-icon {
+    font-size: 2rem;
+  }
+
+  .mini-menu-items {
+    top: 100%;
+    right: 15%;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    align-self: center;
+    padding: 2rem;
+  }
+
+  .color-palette {
+    left: 10%;
+    flex-direction: column;
+    width: auto;
+    justify-content: space-between;
+    top: 0;
+    left: 95%;
   }
 
   .booking-form {
-    min-width: 100%;
+    max-width: 100%;
     left: 0;
     right: 0;
     /* justify-content: center; */
   }
 
   .book-now {
-    /* justify-content: center;
-    align-items: center; */
+    /* justify-content: center; */
+    align-items: center;
+    max-width: 100%;
+    padding: 1rem 2rem;
+    margin: 0;
   }
 }
 
-/* At 420px */
-@media screen and (max-width: 26em) {
-  nav ul li span {
-    display: none;
-  }
-
-  nav ul li ion-icon {
-    font-size: 1.9rem;
-  }
+/* At 360px */
+@media screen and (max-width: 23em) {
 }

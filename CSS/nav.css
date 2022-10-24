@@ -90,7 +90,7 @@ nav a:hover {
   min-width: 14rem;
   width: auto;
   padding: 1rem 0rem;
-  top: 8%;
+  top: 100%;
   right: 5%;
   min-height: 12rem;
   display: flex;
@@ -124,8 +124,10 @@ nav a:hover {
   padding: 5px 1rem;
   color: #dddddd;
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   transition: all 0.3s ease-in-out;
+  display: flex;
+  gap: 1rem;
 }
 
 .mini-menu-items a:hover,
@@ -191,6 +193,20 @@ nav a:hover {
 .show-palette {
   transform: translateX(0);
   transition: all 0.3s ease-in-out;
+}
+
+/* Counter */
+.counter {
+  background-color: var(--secondary-background-color);
+  width: 2rem;
+  height: 2rem;
+  color: var(--primary-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 /* return//////////// */

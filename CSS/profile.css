@@ -212,8 +212,8 @@ textarea:focus {
 /* Booking form */
 
 .booking-form {
-  height: 90vh;
-  width: 40rem;
+  min-height: 90vh;
+  max-width: 40rem;
   background-color: rgba(6, 7, 7, 0.5);
   position: absolute;
   top: 7rem;
@@ -249,7 +249,7 @@ textarea:focus {
   gap: 2rem;
 }
 .book-now input {
-  width: 27rem;
+  width: 90%;
   padding: 0.6rem;
   border-radius: 5px;
   border: none;
@@ -262,7 +262,7 @@ textarea:focus {
   color: #fff;
 }
 .book-now textarea {
-  width: 27rem;
+  width: 90%;
   padding: 0.5rem 1rem;
 }
 .close-icon {

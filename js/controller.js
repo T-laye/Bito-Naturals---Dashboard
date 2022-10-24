@@ -146,14 +146,13 @@ addMarkUp(products);
 // Adding to cart
 const cartBtn = document.querySelectorAll(".btn--cart");
 const cartSection = document.querySelector(".table-body");
-let arr = [];
+const counter = document.querySelector(".counter");
 
 prodContainer.addEventListener("click", addToCartClicked);
 
 function addToCartClicked(e) {
   products.forEach((value, i, _) => {
     const button = e.target.closest(".btn--cart");
-    if (!button) return;
     const shopNow = button.parentElement.parentElement.parentElement;
     const title = shopNow.getElementsByClassName("title")[i].innerText;
     const image = shopNow.getElementsByClassName("image")[i].src;
@@ -161,18 +160,22 @@ function addToCartClicked(e) {
 
     addItemToCart(title, price, image);
 
+    const count = +counter.textContent + 1;
+    counter.textContent = count;
+    // counter.classList.add("occupied");
+    // console.log(counter);
+
     updateTotal();
   });
 }
 
 function addItemToCart(title, price, image) {
-  const cartItems = document.getElementsByClassName("table-body")[0];
   const cartRow = document.createElement("tr");
-  cartRow.classList.add("tabRow");
-
+  const cartItems = document.getElementsByClassName("table-body")[0];
+  cartRow.classList.add(".tab-row");
   const actPrice = price.slice(6, -1);
 
-  const html = `<tr class="tabRow">
+  const html = `<tr class="tab-row">
   <td>
   <div class="cart-product-details">
     <div class="cart-image-container">
@@ -180,13 +183,12 @@ function addItemToCart(title, price, image) {
     </div>
     <div class="image-description">
       <ul>
-        <li>${title}</li>
+        <li class="productTitle">${title}</li>
         
       </ul>
     </div>
   </div>
   </td>
-
    <td>
       <div class="quantity">
         <input class="qty-input" min="1" value="1" type="number" /> 
@@ -201,50 +203,14 @@ function addItemToCart(title, price, image) {
   <span class="total">${actPrice}</span>
   </td>
   
-  <td>
+  <td class="tableBtn">
   <button class="order">Order Now</button>
+  <button class="delBtn">Delete</button>
   </td>
   </tr>`;
 
   cartRow.innerHTML = html;
   cartItems.append(cartRow);
-
-  // const rows = document.querySelectorAll(".tabRow");
-  // const delbtns = document.querySelector(".delete");
-
-  // // console.log(rows);
-  // // console.log(btn);
-
-  // delbtns.forEach((btn, b) => {
-  //   btn.addEventListener("click", (e) => {
-  //     rows.forEach((row, r) => {
-  //       // if (r === b) {
-  //       console.log(row, "yes")
-  //       // }
-  //       //   if(b === r)
-  //       // }
-  //     });
-  //   });
-  // });
-  const deleteBtn = document.getElementsByClassName("delete");
-  //   del((deleteNow, i) => {
-  //     const button = deleteNow[i];
-  //     button.addEventListener("click", function (e) {
-  //       // e.target.closest("tr").parentElement.childNodes[5].remove();
-  //       console.log("click");
-  //     });
-  //   });
-  console.log();
-  for (let i = 0; i < deleteBtn.length; i++) {
-    const button = deleteBtn[i];
-    button.addEventListener("click", function (e) {
-      const btnClicked = e.target;
-      btnClicked.parentElement.parentElement.parentElement.remove();
-
-      console.log("clc");
-      console.log(btnClicked.parentElement.parentElement);
-    });
-  }
 }
 
 function updateTotal() {
@@ -261,9 +227,98 @@ function updateTotal() {
 
           totals.forEach((total, t) => {
             if (t === i && t === p) total.textContent = newTotal;
+            console.log(newTotal);
           });
         }
       });
     });
   });
+
+  ////////////////////////////
+  // Order and Delet
+  const orderNow = document.getElementsByClassName("order");
+  const delBtn = document.getElementsByClassName("delBtn");
+  const tabRows = document.getElementsByClassName(".tab-row");
+  const orderContainer = document.querySelector(".order-container");
+  const orderClose = document.querySelector(".order-close-icon");
+
+  let orderBtns = Array.from(orderNow);
+  let rows = Array.from(tabRows);
+  let delBtns = Array.from(delBtn);
+  console.log(orderBtns);
+  console.log(delBtns);
+  console.log(rows);
+
+  orderBtns.forEach(
+    (orderBtn, i) =>
+      orderBtn.addEventListener("click", function () {
+        rows.forEach((row, r) => {
+          if (r === i) {
+            console.log("jane", i);
+            orderContainer.classList.add("hidden-form");
+
+            const qtyOrdered = document.querySelector(".qtyOrdered");
+
+            const qtyProd = Array.from(
+              document.getElementsByClassName("qty-input")
+            );
+
+            const productOrdered = document.querySelector(".productOrdered");
+
+            const productTitle = Array.from(
+              document.getElementsByClassName("productTitle")
+            );
+
+            const orderTotal = document.querySelector(".orderTotal");
+
+            const prodTotal = Array.from(
+              document.getElementsByClassName("total")
+            );
+
+            // console.log(qtyOrdered, productOrdered, prodTotal, qty);
+
+            ////
+            qtyProd.forEach((qty, q) => {
+              if (q === i) {
+                qtyOrdered.value = qty.value;
+              }
+            });
+
+            productTitle.forEach((prod, p) => {
+              if (p === i) {
+                productOrdered.value = prod.textContent;
+              }
+            });
+
+            prodTotal.forEach((ord, o) => {
+              if (o === i) {
+                orderTotal.textContent = ord.textContent;
+              }
+            });
+          }
+        });
+        orderClose.addEventListener("click", function () {
+          console.log("closed");
+          orderContainer.classList.remove("hidden-form");
+          // ord.textContent = " ";
+        });
+      })
+
+    // Product to order form transfer details
+    //Close button
+  );
+
+  delBtns.forEach((delBtn, i, arr) =>
+    delBtn.addEventListener("click", function () {
+      rows.forEach((row, v) => {
+        if (v === i) {
+          // console.log("delBtn", i);
+          row.remove();
+        }
+      });
+    })
+  );
 }
+
+// const c = +occupied.textContent - 1;
+// occupied.textContent = c;
