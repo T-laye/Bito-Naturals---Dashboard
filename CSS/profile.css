@@ -2,8 +2,7 @@
   padding: 4rem 1rem;
   min-height: 100vh;
   display: flex;
-  gap: 1rem;
-  justify-content: space-between;
+  justify-content: space-around;
   background: linear-gradient(
       to top,
       var(--primary-background-color-gradient),
@@ -13,6 +12,8 @@
   background-position: top;
   background-repeat: none;
   background-size: cover;
+  /* overflow: hidden; */
+  /* position: relative; */
 }
 
 header {
@@ -24,6 +25,8 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
+  align-items: flex-start;
+  margin: 10% auto;
 }
 
 .greeting {
@@ -160,9 +163,11 @@ textarea:focus {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
+  justify-content: center;
   gap: 3rem;
   height: 100%;
   width: 60%;
+  margin: auto;
 }
 
 .profile-content div {
@@ -179,6 +184,7 @@ textarea:focus {
   box-shadow: 0 5px 10px #00000052;
   border-radius: 5rem;
   /* background: linear-gradient(to top, #631563, #6d506d) no-repeat 0 0 / cover; */
+  /* text-align: center; */
 }
 
 .profile-content .book {
@@ -206,7 +212,6 @@ textarea:focus {
 /* Booking form */
 
 .booking-form {
-  /* display: none; */
   height: 90vh;
   width: 40rem;
   background-color: rgba(6, 7, 7, 0.5);
@@ -216,16 +221,14 @@ textarea:focus {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   transition: all 0.5s ease-in-out;
-  transform: translateX(100%);
+  transform: translateY(-150%);
+  color: var(--secondary-background-color);
 }
 .hidden-form {
-  transition: all 0.5s ease-in-out;
-  /* display: block; */
-  transform: translateX(0);
+  transform: translateY(0%);
 }
 .schedules {
   color: #fff;
-  /* margin: 1rem; */
   padding: 0rem 2rem;
   border: 2px solid var(--primary-background-color);
 }
@@ -239,7 +242,7 @@ textarea:focus {
   text-align: center;
   line-height: 3rem;
 }
-fieldset {
+.book-now {
   padding: 2rem;
   margin: 1rem 2rem;
   display: flex;

@@ -5,6 +5,8 @@
 }
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 body {
   font-size: 2rem;
@@ -23,17 +25,28 @@ body {
 }
 
 header {
+  color: var(--primary-background-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  /* padding-top: 10rem; */
+}
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 5rem;
   height: 7rem;
-  color: var(--primary-background-color);
-  box-shadow: 0px 0.5px 2px 0.5px #0f0d0f;
-}
-
-.container {
-  max-width: 120rem;
+  /* box-shadow: 0px 0.5px 2px 0.5px #0f0d0f; */
+  max-width: 130rem;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -69,5 +82,7 @@ section {
 }
 
 .display--section {
+  /* overflow: hidden; */
   display: block;
+  /* margin-top: 15%; */
 }

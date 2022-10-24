@@ -10,81 +10,86 @@
     <link rel="stylesheet" href="./CSS/nav.css" />
     <link rel="stylesheet" href="./CSS/catalogue.css" />
     <link rel="stylesheet" href="./CSS/global.css" />
+    <link rel="stylesheet" href="./CSS/query.css" />
     <!-- <link rel="stylesheet" href="./CSS/themes.css"> -->
   </head>
   <body>
     <header>
-      <div class="company-name">
-        <h3>Bito Naturals</h3>
-      </div>
+      <div class="header-container"> 
 
-      <nav>
-        <ul class="nav-items">
-          <li class="nav-item">
-            <a href="#" class="nav-link nav-link--active " data-tab="1"
-              ><ion-icon name="person"></ion-icon> <span>My Profile</span>
-            </a>
-          </li>
-          <!-- <li class="nav-item">
-                <a href="#" class="nav-link"> Profile </a>
-              </li> -->
-          <li class="nav-item">
-            <a href="#" class="nav-link" data-tab="3"
-              ><ion-icon name="pricetags-outline"></ion-icon>Catalogue
-            </a>
-          </li>
-          <li class="nav-item" >
-            <a href="#" class="nav-link" data-tab="2"
-              ><ion-icon name="cart-outline"></ion-icon>  Cart
-            </a>
-          </li>
-          
-          <!-- <li class="nav-item"><a href="#" class="nav-link"> More </a></li> -->
-          <!-- <div>
-                  <button class="btn btn-shop-now">Shop Now</button>
-                </div> -->
-        </ul>
-      </nav>
-      <div class="mini-menu">
-        <ul class="mini-menu-items mini-menu-items--hidden">
-          <!-- <li class="nav-item">
-            <a href="#""
-              ><ion-icon name="home"></ion-icon> Home
-            </a>
-          </li> -->
-          <li>
-            <ion-icon name="home"></ion-icon>
-            <a href="../Bito homepage/index.html" target="_blank">Home</a>
-          </li>
-          <li class="theme-container">
-            <ion-icon name="color-palette"></ion-icon>
-            <a href="#" class="theme">Theme</a>
-            <li class="color-palette">
-              <div class="colors" id="default"></div>
-              <div class="colors" id="green" ></div>
-              <div class="colors" id="red"></div>
-              <div class="colors" id="blue"></div>
-              <div class="colors" id="black"></div>
-            </li>
-          </li>
-          <li>
-            <ion-icon name="log-out"></ion-icon>
-            <a href="../Bito Login/login.html">Sign-Out</a>
-          </li>
-        </ul>
-      </div>
-      <div class="mini-profile ">
-        <div class="profile-pic--header">
-          <img id="miniImg" src="./img/profile pic default.png" alt="profile-pic" />
+        <div class="company-name">
+          <h3>Bito Naturals</h3>
         </div>
-        <ion-icon class="down-caret" name="caret-down"></ion-icon>
-        <ion-icon class="up-caret hide-caret" name="caret-up-outline"></ion-icon>
+  
+        <nav>
+          <ul class="nav-items">
+            <li class="nav-item">
+              <a href="#" class="nav-link nav-link--active " data-tab="1"
+                ><ion-icon name="person"></ion-icon> <span>My Profile</span>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+                  <a href="#" class="nav-link"> Profile </a>
+                </li> -->
+            <li class="nav-item">
+              <a href="#" class="nav-link" data-tab="3"
+                ><ion-icon name="pricetags-outline"></ion-icon>
+                <span>Catalogue</span>
+              </a>
+            </li>
+            <li class="nav-item" >
+              <a href="#" class="nav-link" data-tab="2"
+                ><ion-icon name="cart-outline"></ion-icon>  <span>Cart</span>
+              </a>
+            </li>
+            
+            <!-- <li class="nav-item"><a href="#" class="nav-link"> More </a></li> -->
+            <!-- <div>
+                    <button class="btn btn-shop-now">Shop Now</button>
+                  </div> -->
+          </ul>
+        </nav>
+        <div class="mini-menu">
+          <ul class="mini-menu-items mini-menu-items--hidden">
+            <!-- <li class="nav-item">
+              <a href="#""
+                ><ion-icon name="home"></ion-icon> Home
+              </a>
+            </li> -->
+            <li>
+              <ion-icon name="home"></ion-icon>
+              <a href="../Bito homepage/index.html" target="_blank">Home</a>
+            </li>
+            <li class="theme-container">
+              <ion-icon name="color-palette"></ion-icon>
+              <a href="#" class="theme">Theme</a>
+              <li class="color-palette">
+                <div class="colors" id="default"></div>
+                <div class="colors" id="green" ></div>
+                <div class="colors" id="red"></div>
+                <div class="colors" id="blue"></div>
+                <div class="colors" id="black"></div>
+              </li>
+            </li>
+            <li>
+              <ion-icon name="log-out"></ion-icon>
+              <a href="../Bito Login/login.html">Sign-Out</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mini-profile ">
+          <div class="profile-pic--header">
+            <img id="miniImg" src="./img/profile pic default.png" alt="profile-pic" />
+          </div>
+          <ion-icon class="down-caret" name="caret-down"></ion-icon>
+          <ion-icon class="up-caret hide-caret" name="caret-up-outline"></ion-icon>
+        </div>
       </div>
     </header>
 
     <main>
       <section class="section  content--1 display--section">
-        <div id="profile" class=" profile-section ">
+        <div id="profile" class=" profile-section container">
           <div class="user-info">
             <h1 class="greeting">Hi, Teejay 👋</h1>
             <div class="profile-pic-wrapper profile-pic-main">
@@ -117,7 +122,7 @@
             <button class="btn profile-btn-edit">Edit Profile</button>
           </div>
   
-          <div class="profile-content">
+          <div class="profile-content ">
               <div class="content">
                <p>Our team of hair specailists are available to speak to you pertaining to the condition of your hair.
                  
@@ -135,7 +140,7 @@
             </div>
         </div>
 
-        <div class="booking-form">
+        <div class="booking-form ">
           
           <div class="schedules">
             <div class="schedules-icon">

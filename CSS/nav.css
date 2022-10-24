@@ -7,8 +7,7 @@ nav .nav-items {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10rem;
-  font-size: 2.4rem;
+  gap: 5rem;
 }
 
 nav .nav-items li ion-icon {
@@ -84,12 +83,6 @@ nav a:hover {
   height: 100%;
 }
 
-.mini-menu {
-  position: relative;
-  width: 0;
-  /* overflow: hidden; */
-}
-
 .mini-menu-items {
   list-style: none;
   position: absolute;
@@ -97,8 +90,8 @@ nav a:hover {
   min-width: 14rem;
   width: auto;
   padding: 1rem 0rem;
-  top: 5rem;
-  left: -3rem;
+  top: 8%;
+  right: 5%;
   min-height: 12rem;
   display: flex;
   flex-direction: column;
@@ -108,7 +101,9 @@ nav a:hover {
   opacity: 1;
   transition: all 0.3s ease-in-out;
   transform: translateY(0);
+  /* margin-right: 12rem; */
   /* overflow-x: hidden; */
+  white-space: nowrap;
 }
 
 .mini-menu-items--hidden {
@@ -126,6 +121,7 @@ nav a:hover {
 
 .mini-menu-items a:link,
 .mini-menu-items a:visited {
+  padding: 5px 1rem;
   color: #dddddd;
   text-decoration: none;
   font-size: 1.6rem;
@@ -156,7 +152,7 @@ nav a:hover {
   left: 95%;
   z-index: 10;
   background-color: inherit;
-  transform: translateX(1150%);
+  transform: translateY(-2000%);
   transition: all 0.3s ease-in-out;
 }
 
