@@ -10,8 +10,13 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   onAuthStateChanged,
+  updateProfile,
 } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
 // import { firestore } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -34,34 +39,66 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const signUpButton = document.getElementById("sign_up");
-const google = document.getElementById("google");
+const greeting = document.querySelector(".user");
+const consultName = document.querySelector(".consultName");
+const consultEmail = document.querySelector(".consultEmail");
+const customerName = document.querySelector(".customerName");
+const customerPhone = document.querySelector(".customerNumber");
+const profileName = document.querySelector(".proUserName");
+const profileEmail = document.querySelector(".proEmail");
+const profilePhone = document.querySelector(".proPhone");
 
-signUpButton.addEventListener("click", function (e) {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
-  const userName = document.getElementById("userName");
-  const password = document.getElementById("password").value;
+onAuthStateChanged(auth, (user) => {
+  if (user !== null) {
+    // alert("good");
+    // console.log(user);
+    greeting.textContent = user.displayName;
+    consultName.value = user.displayName;
+    profileName.value = user.displayName;
+    customerName.value = user.displayName;
+    customerPhone.value = user.phoneNumber;
+    consultEmail.value = user.email;
+    profileEmail.value = user.email;
+    profilePhone.value = user.phoneNumber;
+    // customerEmail.value = user.email;
+  } else {
+    // alert("bad");
+  }
+});
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      user.displayName = userName.value;
-      window.open("http://127.0.0.1:5501/catalogue.html#");
-      // ...
-      console.log(user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-      console.log(errorMessage, errorCode);
+// alert("hi");
+
+const cartBtn = document.querySelectorAll(".btn--cart");
+const products = document.querySelectorAll(".products");
+
+const prodContainer = document.querySelector(".products-container");
+
+cartBtn.forEach((btn, c) => {
+  btn.addEventListener("click", (e) => {
+    products.forEach((prod, p) => {
+      if (c === p) {
+        const productDetails =
+          document.querySelector(".product-details").textContent;
+        const productTitle = document.querySelector(".title").textContent;
+        const productPrice = document.querySelector(".price").textContent;
+
+        try {
+          const docRef = addDoc(collection(db, "cart"), {
+            productname: productDetails,
+            title: productTitle,
+            price: productPrice,
+          });
+        } catch (e) {
+          alert("Error adding document: ", e);
+        }
+      }
     });
+  });
 });
 
-auth.onAuthStateChanged((user) => {
-  const userName = document.getElementById("userName").value;
-  user.displayName = userName;
-  console.log(user);
+prodContainer.addEventListener("click", (e) => {
+  const clicked = e.target.closest(".btn--cart");
+  if (!clicked) return;
 });
+
+console.log(prodContainer.childNodes);

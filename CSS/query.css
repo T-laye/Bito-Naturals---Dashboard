@@ -11,6 +11,9 @@
     width: 90%;
     margin: 0 auto;
   }
+  .profile-content {
+    padding-top: 10%;
+  }
 }
 
 /* At 950px */
@@ -26,10 +29,6 @@
 
   .profile-content div {
     width: 100%;
-  }
-
-  .profile-content {
-    padding-top: 10%;
   }
 }
 
@@ -66,6 +65,10 @@
 
   nav .nav-items li a {
     padding: 1.4rem;
+  }
+
+  .nav-link--active {
+    box-shadow: 0px -2px 0px 0px #dddddd;
   }
 
   .mini-menu-items {

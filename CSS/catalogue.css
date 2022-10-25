@@ -164,6 +164,10 @@
   padding: 0 2rem;
 }
 
+.table-container {
+  overflow: auto;
+}
+
 table {
   width: 100%;
   /* max-width: 120rem; */

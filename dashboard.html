@@ -92,7 +92,7 @@
       <section class="section  content--1 display--section">
         <div id="profile" class=" profile-section container">
           <div class="user-info">
-            <h1 class="greeting">Hi, Teejay 👋</h1>
+            <h1 class="greeting">Hi, <span class="user"> Teejay </span> 😁 </h1>
             <div class="profile-pic-wrapper profile-pic-main">
               <img id="profile-display-image" src="./img/profile pic default.png" alt="profile-pic">
             </div>
@@ -100,27 +100,27 @@
             <form action="" class="profile-form hide-form">
               <div class="profile-pic-div">
                 <img id="photo" src="./img/profile pic default.png" alt="profile-pic">
-                <input
+                <!-- <input
                   id="file"
                   type="file"
-                />
-                <label for="file" id="uploadBtn">Upload Photo</label>
+                /> -->
+                <!-- <label for="file" id="uploadBtn">Upload Photo</label> -->
               </div>
               <fieldset>
                 <legend>Personal Info</legend>
   
-                <input class="editProfile" required class="name" placeholder="Name" type="text" >
+                <!-- <input class="editProfile proName" readonly class="name" placeholder="Name" type="text"  > -->
   
-                <input class="editProfile" required placeholder="User Name" type="text">
+                <input class="editProfile proUserName" readonly placeholder="User Name" type="text">
   
-                <input required placeholder="Email" type="email" >
+                <input readonly class="proEmail" placeholder="Email" type="email" >
                 
-                <input class="editProfile" required placeholder="Phone Number" type="tel" >
+                <input class="editProfile proPhone" readonly placeholder="Phone Number" type="tel" >
   
-                <input class=" btn profile-btn-save" Value="Save" type="submit" >
+                <input class=" btn profile-btn-exit" Value="Exit" type="submit" >
               </fieldset> 
             </form>
-            <button class="btn profile-btn-edit">Edit Profile</button>
+            <button class="btn profile-btn-view">View Profile</button>
           </div>
   
           <div class="profile-content ">
@@ -162,8 +162,8 @@
           <fieldset class="book-now" >
             <h2 class="booking-heading">Book a Session</h2>
 
-            <input type="name" placeholder="Your Name" >
-            <input type="email" placeholder="Your email" >
+            <input type="name" class="consultName" placeholder="Your Name" readonly>
+            <input type="email" class="consultEmail placeholder="Your email" readonly >
 
             <input type="date">
             <input type="time" >
@@ -209,92 +209,93 @@
                 <ion-icon name="cart-outline"></ion-icon> 
                 <h2>Shopping Cart</h2>
               </div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                    <th></th>
-                    <button class="delete"><ion-icon size="large" name="trash-outline"></ion-icon></button>
+              <div class="table-container">
 
-                  </tr>
-                </thead>
-                <tbody class="table-body">
-                  <!-- <tr class="tab-row">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Quantity</th>
+                      <th>Price</th>
+                      <th>Total</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-body">
+                    <!-- <tr class="tab-row">
+                      <td>
+                        <div class="cart-product-details">
+                        <div class="cart-image-container">
+                          <img src="./img/coconut oil.avif" alt="" />
+                        </div>
+                        <div class="image-description">
+                          <ul>
+                            <li>Coconut Oil</li>
+                            <li>Large</li>
+                          </ul>
+                        </div>
+                      </div>
+                      </td>
+      
                     <td>
-                      <div class="cart-product-details">
-                      <div class="cart-image-container">
-                        <img src="./img/coconut oil.avif" alt="" />
+                      <div class="quantity">
+                        <input class="qty-input" min="1" value="1" type="number" /> 
+                       
                       </div>
-                      <div class="image-description">
-                        <ul>
-                          <li>Coconut Oil</li>
-                          <li>Large</li>
-                        </ul>
-                      </div>
-                    </div>
                     </td>
     
-                  <td>
-                    <div class="quantity">
-                      <input class="qty-input" min="1" value="1" type="number" /> 
-                     
-                    </div>
-                  </td>
+                      <td>
+                         <span class="cartPrice">550 </span>
+                      </td>
+                        
+                      <td>
+                        <span class="total">5000</span>
+                      </td>
   
-                    <td>
-                       <span class="cartPrice">550 </span>
-                    </td>
-                      
-                    <td>
-                      <span class="total">5000</span>
-                    </td>
-
-                    <td>
-                      <button class="order">Order Now</button>
-                      
-                      <button class="delete">🛒</button>
-                    </td>
-                  </tr> -->
-                  <!-- <tr class="tab-row">
-                    <td>
-                      <div class="cart-product-details">
-                      <div class="cart-image-container">
-                        <img src="./img/coconut oil.avif" alt="" />
+                      <td>
+                        <button class="order">Order Now</button>
+                        
+                        <button class="delete">🛒</button>
+                      </td>
+                    </tr> -->
+                    <!-- <tr class="tab-row">
+                      <td>
+                        <div class="cart-product-details">
+                        <div class="cart-image-container">
+                          <img src="./img/coconut oil.avif" alt="" />
+                        </div>
+                        <div class="image-description">
+                          <ul>
+                            <li>Coconut Oil</li>
+                            <li>Large</li>
+                          </ul>
+                        </div>
                       </div>
-                      <div class="image-description">
-                        <ul>
-                          <li>Coconut Oil</li>
-                          <li>Large</li>
-                        </ul>
+                      </td>
+      
+                    <td>
+                      <div class="quantity">
+                        <input class="qty-input" min="1" value="1" type="number" /> 
                       </div>
-                    </div>
                     </td>
     
-                  <td>
-                    <div class="quantity">
-                      <input class="qty-input" min="1" value="1" type="number" /> 
-                    </div>
-                  </td>
+                      <td>
+                         <span class="price">250 </span>
+                      </td>
+                        
+                      <td>
+                        <span class="total">5000</span>
+                      </td>
   
-                    <td>
-                       <span class="price">250 </span>
-                    </td>
-                      
-                    <td>
-                      <span class="total">5000</span>
-                    </td>
-
-                    <td>
-                      <button class="order">Order Now</button>
-                      
-                      <button class="delete">🛒</button>
-                    </td>
-                  </tr> -->
-                 </tbody>
-              </table> 
+                      <td>
+                        <button class="order">Order Now</button>
+                        
+                        <button class="delete">🛒</button>
+                      </td>
+                    </tr> -->
+                   </tbody>
+                </table> 
+              </div>
 
     <!-- OrderNow slidein//////////////// -->
             <div class="order-container">
@@ -350,5 +351,6 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <script type="module" src="./js/model.js"></script>
   </body>
 </html>

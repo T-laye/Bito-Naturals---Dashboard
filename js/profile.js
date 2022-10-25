@@ -1,7 +1,7 @@
 "use strict";
 
-const btnEditForm = document.querySelector(".profile-btn-edit");
-const btnSaveForm = document.querySelector(".profile-btn-save");
+const btnViewForm = document.querySelector(".profile-btn-view");
+const btnExitForm = document.querySelector(".profile-btn-exit");
 const profileForm = document.querySelector(".profile-form");
 const profilePic = document.querySelector(".profile-pic-main");
 const greeting = document.querySelector(".greeting");
@@ -9,29 +9,31 @@ const profileInputs = Array.from(document.querySelectorAll(".editProfile"));
 
 // console.log(profileInputs);
 
-btnEditForm.addEventListener("click", () => {
-  profileForm.classList.toggle("hide-form");
+btnViewForm.addEventListener("click", () => {
+  profileForm.classList.remove("hide-form");
   // btnSaveForm.classList.toggle("hide-form");
 
-  btnEditForm.classList.toggle("hide-form");
-  profilePic.classList.toggle("hide-form");
-  greeting.classList.toggle("hide-form");
+  btnViewForm.classList.add("hide-form");
+  profilePic.classList.add("hide-form");
+  greeting.classList.add("hide-form");
+  btnExitForm.classList.remove("hide-form");
 });
 
-btnSaveForm.addEventListener("click", (e) => {
+btnExitForm.addEventListener("click", (e) => {
   e.preventDefault();
-  profileInputs.forEach((inp) => {
-    if (inp.value === "") {
-      return;
-    } else {
-      btnEditForm.classList.toggle("hide-form");
-      profileForm.classList.toggle("hide-form");
-      // btnSaveForm.classList.toggle("hide-form");
-      profilePic.classList.toggle("hide-form");
-      greeting.classList.toggle("hide-form");
-      // inp.value = "";
-    }
-  });
+  // profileInputs.forEach((inp) => {
+  // if (inp.value === "") {
+  //   return;
+  // } else {
+  btnViewForm.classList.toggle("hide-form");
+  btnExitForm.classList.toggle("hide-form");
+  profileForm.classList.toggle("hide-form");
+  // btnSaveForm.classList.toggle("hide-form");
+  profilePic.classList.toggle("hide-form");
+  greeting.classList.toggle("hide-form");
+  // inp.value = "";
+  // }
+  // });
 });
 
 ////////////////////////////////////////////////

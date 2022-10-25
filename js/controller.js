@@ -1,5 +1,6 @@
 ///////////////////////////////////////////////////////////
 // Mini-Menu Navigation
+
 const miniMenu = document.querySelector(".mini-menu");
 const miniMenuNav = document.querySelector(".mini-menu-items");
 const miniProfile = document.querySelector(".mini-profile");
@@ -153,12 +154,14 @@ prodContainer.addEventListener("click", addToCartClicked);
 function addToCartClicked(e) {
   products.forEach((value, i, _) => {
     const button = e.target.closest(".btn--cart");
+    if (!button) return;
     const shopNow = button.parentElement.parentElement.parentElement;
     const title = shopNow.getElementsByClassName("title")[i].innerText;
     const image = shopNow.getElementsByClassName("image")[i].src;
     const price = shopNow.getElementsByClassName("price")[i].innerText;
 
     addItemToCart(title, price, image);
+    // if (title === 1) return;
 
     const count = +counter.textContent + 1;
     counter.textContent = count;
@@ -227,7 +230,7 @@ function updateTotal() {
 
           totals.forEach((total, t) => {
             if (t === i && t === p) total.textContent = newTotal;
-            console.log(newTotal);
+            // console.log(newTotal);
           });
         }
       });
@@ -245,9 +248,9 @@ function updateTotal() {
   let orderBtns = Array.from(orderNow);
   let rows = Array.from(tabRows);
   let delBtns = Array.from(delBtn);
-  console.log(orderBtns);
-  console.log(delBtns);
-  console.log(rows);
+  // console.log(orderBtns);
+  // console.log(delBtns);
+  // console.log(rows);
 
   orderBtns.forEach(
     (orderBtn, i) =>
@@ -309,12 +312,15 @@ function updateTotal() {
   );
 
   delBtns.forEach((delBtn, i, arr) =>
-    delBtn.addEventListener("click", function () {
-      rows.forEach((row, v) => {
+    rows.forEach((row, v) => {
+      delBtn.addEventListener("click", function () {
         if (v === i) {
           // console.log("delBtn", i);
           row.remove();
+          counter.textContent = arr.length - 1;
+          counter.textContent = --arr.length;
         }
+        console.log(arr.length - 1);
       });
     })
   );
