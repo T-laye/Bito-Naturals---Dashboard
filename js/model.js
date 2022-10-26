@@ -69,7 +69,7 @@ onAuthStateChanged(auth, (user) => {
     const storageRef = ref(storage, `profile-pic/`);
     const photoId = document.querySelector("#miniImg");
     const bigPhotoId = document.querySelector("#profile-display-image");
-    const prPhoto = document.querySelector("#photo");
+    // const prPhoto = document.querySelector("#photo");
 
     listAll(storageRef)
       .then((res) => {
@@ -91,7 +91,7 @@ onAuthStateChanged(auth, (user) => {
         });
       })
       .catch((error) => {
-        alert(error);
+        // alert(error);
       });
   } else {
     // alert("bad");
@@ -103,7 +103,7 @@ onAuthStateChanged(auth, (user) => {
 const cartBtn = document.querySelectorAll(".btn--cart");
 const products = document.querySelectorAll(".products");
 
-const prodContainer = document.querySelector(".products-container");
+// const prodContainer = document.querySelector(".products-container");
 
 cartBtn.forEach((btn, c) => {
   btn.addEventListener("click", (e) => {
@@ -121,7 +121,7 @@ cartBtn.forEach((btn, c) => {
             price: productPrice,
           });
         } catch (e) {
-          alert("Error adding document: ", e);
+          // alert("Error adding document: ", e);
         }
       }
     });

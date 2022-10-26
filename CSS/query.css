@@ -120,11 +120,16 @@
   }
 
   .user-info {
-    padding-top: 15%;
+    padding-top: 10%;
   }
 
   .profile-content {
     padding-top: 0;
+  }
+
+  .profile-pic-wrapper {
+    width: 30rem;
+    height: 30rem;
   }
 
   .booking-form {
@@ -135,6 +140,11 @@
   .book-now {
     justify-content: center;
     align-items: center;
+  }
+
+  .items-header h2 {
+    margin-top: 15%;
+    font-size: 4.2rem;
   }
 }
 /* At 450px */
@@ -189,6 +199,10 @@
     max-width: 100%;
     padding: 1rem 2rem;
     margin: 0;
+  }
+  .items-header h2 {
+    margin-top: 20%;
+    font-size: 3.6rem;
   }
 }
 

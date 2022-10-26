@@ -173,47 +173,85 @@ function addToCartClicked(e) {
 }
 
 function addItemToCart(title, price, image) {
-  const cartRow = document.createElement("tr");
-  const cartItems = document.getElementsByClassName("table-body")[0];
+  const cartRow = document.createElement("li");
+  const cartItems = document.getElementsByClassName("list")[0];
   cartRow.classList.add(".tab-row");
   const actPrice = price.slice(6, -1);
 
-  const html = `<tr class="tab-row">
-  <td>
-  <div class="cart-product-details">
-    <div class="cart-image-container">
-      <img src="${image}" alt="" />
+  const html = `
+   <li class="list__item">
+    <div  class="cart-product-details">
+        <div class="cart-image-container">
+          <img src="${image}" alt="" />
+        </div>
+        <div class="image-description">
+          <h3 class="productTitle">${title}</h3>
+        </div>
     </div>
-    <div class="image-description">
-      <ul>
-        <li class="productTitle">${title}</li>
-        
-      </ul>
-    </div>
-  </div>
-  </td>
-   <td>
-      <div class="quantity">
+    <div class="quantity">
+      Qty :
         <input class="qty-input" min="1" value="1" type="number" /> 
       </div>
-    </td>
-  
-  <td>
-     <span class="cartPrice">${actPrice}</span>
-  </td>
-  
-  <td>
-  <span class="total">${actPrice}</span>
-  </td>
-  
-  <td class="tableBtn">
-  <button class="order">Order Now</button>
-  <button class="delBtn">Delete</button>
-  </td>
-  </tr>`;
+      <div>
+        Price :
+        <span class="cartPrice">${actPrice} </span>
+      </div>
+      <div>
+        Total:
+        <span class="total">${actPrice}</span>
+      </div>
+
+      <div class="cartBtn tableBtn">
+        <button class="btn order">Order Now</button>
+        
+        <button class="btn delBtn">🗑</button>
+      </div>
+  </li>
+  `;
 
   cartRow.innerHTML = html;
   cartItems.append(cartRow);
+  // const cartRow = document.createElement("tr");
+  // const cartItems = document.getElementsByClassName("table-body")[0];
+  // cartRow.classList.add(".tab-row");
+  // const actPrice = price.slice(6, -1);
+
+  // const html = `<tr class="tab-row">
+  // <td>
+  // <div class="cart-product-details">
+  //   <div class="cart-image-container">
+  //     <img src="${image}" alt="" />
+  //   </div>
+  //   <div class="image-description">
+  //     <ul>
+  //       <li class="productTitle">${title}</li>
+
+  //     </ul>
+  //   </div>
+  // </div>
+  // </td>
+  //  <td>
+  //     <div class="quantity">
+  //       <input class="qty-input" min="1" value="1" type="number" />
+  //     </div>
+  //   </td>
+
+  // <td>
+  //    <span class="cartPrice">${actPrice}</span>
+  // </td>
+
+  // <td>
+  // <span class="total">${actPrice}</span>
+  // </td>
+
+  // <td class="tableBtn">
+  // <button class="order">Order Now</button>
+  // <button class="delBtn">Delete</button>
+  // </td>
+  // </tr>`;
+
+  // cartRow.innerHTML = html;
+  // cartItems.append(cartRow);
 }
 
 function updateTotal() {
