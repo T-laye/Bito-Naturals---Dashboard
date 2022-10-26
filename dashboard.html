@@ -98,14 +98,11 @@
             </div>
   
             <form action="" class="profile-form hide-form">
-              <div class="profile-pic-div">
-                <img id="photo" src="./img/profile pic default.png" alt="profile-pic">
-                <!-- <input
-                  id="file"
-                  type="file"
-                /> -->
-                <!-- <label for="file" id="uploadBtn">Upload Photo</label> -->
-              </div>
+              <!-- <div class="profile-pic-div"> -->
+                <!-- <img id="photo" src="./img/profile pic default.png" alt="profile-pic">
+                
+                <label for="file" id="uploadBtn">Upload Photo</label> -->
+              <!-- </div> -->
               <fieldset>
                 <legend>Personal Info</legend>
   
@@ -115,9 +112,9 @@
   
                 <input readonly class="proEmail" placeholder="Email" type="email" >
                 
-                <input class="editProfile proPhone" readonly placeholder="Phone Number" type="tel" >
+                <!-- <input class="editProfile proPhone" readonly placeholder="Phone Number" type="tel" > -->
   
-                <input class=" btn profile-btn-exit" Value="Exit" type="submit" >
+                <input class=" btn profile-btn-exit" Value="Close" type="submit" >
               </fieldset> 
             </form>
             <button class="btn profile-btn-view">View Profile</button>
@@ -158,20 +155,23 @@
 
           </div>
 
-          
-          <fieldset class="book-now" >
-            <h2 class="booking-heading">Book a Session</h2>
+          <form class="book-form" action="" name="Booking" netlify>
+            <fieldset class="book-now" >
+              <h2 class="booking-heading">Book a Session</h2>
+  
+              <input name="Name"  type="text" class="consultName" placeholder="Your Name" readonly>
+              <input name="Email" type="email" class="consultEmail "placeholder="Your email" readonly >
+              <input name="Phone Number" type="tel" class="consultNumber" placeholder="Cell No." >
+  
+              <input name="Date" type="date">
+              <input name="Time" type="time" >
+              <textarea name="Description" id="" cols="20" rows="2" style="resize: none; " placeholder="Summary" ></textarea>
+  
+              <input type="submit" class="submit">
+  
+            </fieldset>
 
-            <input type="name" class="consultName" placeholder="Your Name" readonly>
-            <input type="email" class="consultEmail placeholder="Your email" readonly >
-
-            <input type="date">
-            <input type="time" >
-            <textarea name="" id="" cols="20" rows="2" style="resize: none; " placeholder="Summary" ></textarea>
-
-            <input type="submit" class="submit">
-
-          </fieldset>
+          </form>
 
         </div>
       </section>
@@ -309,23 +309,23 @@
                 <!-- <img src="./img/denisse-leon-udFxtLRzB0A-unsplash.jpg" alt=""> -->
               </div>
               
-              <form action="#" class="order-form">
+              <form name="Order" netlify action="#" class="order-form">
 
                 <div class="order-content">
                   <h2>  Order Summary</h2>
                   
                   <fieldset class="order-input" >
 
-                    <input class="customerName" type="text"  placeholder="Name">
-                    <input type="tel" class="customerNumber"  placeholder="Phone number">
-                    <input type="number" class="qtyOrdered" placeholder="Quantity" readonly>
-                    <input type="text" class="productOrdered"  placeholder="Product Name" readonly>
+                    <input name="Name" class="customerName" type="text"  placeholder="Name">
+                    <input name="Phone Number" type="tel" class="customerNumber"  placeholder="Phone number">
+                    <input name="Quantity Ordered" type="number" class="qtyOrdered" placeholder="Quantity" readonly>
+                    <input name="Name of Product" type="text" class="productOrdered"  placeholder="Product Name" readonly>
                   </fieldset>
+                  <div class="price-display">
+                    <p>Total cost: $<input name="Total" class="orderTotal" type="" readonly value=""> </p>
+                  </div>
 
             
-          <div class="price-display">
-            <p>Total cost: $<span class="orderTotal">600</span> </p>
-          </div>
 
           <button type="submit" class="btn payment-btn">Place Order</button>
           <!-- <button class="cancel-btn">Cancel Order</button> -->

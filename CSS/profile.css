@@ -122,8 +122,8 @@ form input {
   border: none;
   border-radius: 1rem;
   height: auto;
-  margin-bottom: 3rem;
-  padding: 1rem;
+  /* margin-bottom: 3rem; */
+  /* padding: 1rem; */
   font-size: 1.6rem;
   text-transform: lowercase;
 }

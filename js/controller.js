@@ -295,7 +295,7 @@ function updateTotal() {
 
             prodTotal.forEach((ord, o) => {
               if (o === i) {
-                orderTotal.textContent = ord.textContent;
+                orderTotal.value = ord.textContent;
               }
             });
           }

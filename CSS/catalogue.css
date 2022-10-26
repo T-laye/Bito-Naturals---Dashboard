@@ -353,6 +353,40 @@ h4 {
   font-weight: 600;
   width: 100%;
 }
+
+.price-display input {
+  width: 10rem;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 1.8rem;
+  background-color: transparent;
+  border-radius: 0;
+  text-align: center;
+  padding: 5px;
+}
+
+.profile-form fieldset {
+  align-items: center;
+}
+.profile-form legend {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.profile-form fieldset input {
+  /* width: 10rem; */
+  font-weight: 500;
+  font-family: inherit;
+  font-size: 2rem;
+  border-radius: 10px;
+  /* background-color: transparent; */
+  /* border-radius: 0; */
+  /* text-align: center; */
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
 form .payment-btn {
   display: block;
   border: none;

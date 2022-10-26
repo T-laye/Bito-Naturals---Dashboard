@@ -17,6 +17,14 @@ import {
   collection,
   addDoc,
 } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
+
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  listAll,
+} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
 // import { firestore } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -46,12 +54,9 @@ const customerName = document.querySelector(".customerName");
 const customerPhone = document.querySelector(".customerNumber");
 const profileName = document.querySelector(".proUserName");
 const profileEmail = document.querySelector(".proEmail");
-const profilePhone = document.querySelector(".proPhone");
 
 onAuthStateChanged(auth, (user) => {
   if (user !== null) {
-    // alert("good");
-    // console.log(user);
     greeting.textContent = user.displayName;
     consultName.value = user.displayName;
     profileName.value = user.displayName;
@@ -59,8 +64,35 @@ onAuthStateChanged(auth, (user) => {
     customerPhone.value = user.phoneNumber;
     consultEmail.value = user.email;
     profileEmail.value = user.email;
-    profilePhone.value = user.phoneNumber;
-    // customerEmail.value = user.email;
+
+    const storage = getStorage(app);
+    const storageRef = ref(storage, `profile-pic/`);
+    const photoId = document.querySelector("#miniImg");
+    const bigPhotoId = document.querySelector("#profile-display-image");
+    const prPhoto = document.querySelector("#photo");
+
+    listAll(storageRef)
+      .then((res) => {
+        res.prefixes.forEach((folderRef) => {
+          // All the prefixes under listRef.
+          // You may call listAll() recursively on them.
+          console.log(folderRef);
+        });
+        res.items.forEach((itemRef, i) => {
+          const picId = itemRef._location.path_.slice(12);
+          // console.log(picId);
+          if (user.uid === picId)
+            getDownloadURL(itemRef).then((url) => {
+              // prPhoto.scr = url;
+              photoId.src = url;
+              bigPhotoId.src = url;
+              // console.log(prPhoto.src);
+            });
+        });
+      })
+      .catch((error) => {
+        alert(error);
+      });
   } else {
     // alert("bad");
   }
@@ -96,9 +128,9 @@ cartBtn.forEach((btn, c) => {
   });
 });
 
-prodContainer.addEventListener("click", (e) => {
-  const clicked = e.target.closest(".btn--cart");
-  if (!clicked) return;
-});
+// prodContainer.addEventListener("click", (e) => {
+//   const clicked = e.target.closest(".btn--cart");
+//   if (!clicked) return;
+// });
 
-console.log(prodContainer.childNodes);
+// console.log(prodContainer.childNodes);
