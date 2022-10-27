@@ -20,6 +20,7 @@ nav .nav-items li a {
   gap: 1rem;
   padding: 1rem;
   color: #fff;
+  font-size: 2rem;
 }
 
 nav a:link,
@@ -124,7 +125,7 @@ nav a:hover {
   padding: 5px 1rem;
   color: #dddddd;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   transition: all 0.3s ease-in-out;
   display: flex;
   gap: 1rem;
@@ -207,27 +208,4 @@ nav a:hover {
   border-radius: 50%;
   font-size: 1.4rem;
   font-weight: 600;
-}
-
-/* return//////////// */
-
-.return {
-  position: fixed;
-  bottom: 5%;
-  right: 2%;
-  background-color: rgb(37, 2, 37);
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.return a {
-  text-decoration: none;
-  /* display: inline-block; */
-  display: flex;
-  align-items: center;
-}
-
-.return ion-icon {
-  font-size: 4.8rem;
-  color: white;
 }

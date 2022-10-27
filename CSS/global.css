@@ -9,8 +9,8 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-size: 2rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
   background: linear-gradient(
       to top,
@@ -52,6 +52,7 @@ header {
 
 .company-name {
   color: #fff;
+  font-size: 2rem;
 }
 
 .btn {

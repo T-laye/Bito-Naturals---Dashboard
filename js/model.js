@@ -67,9 +67,35 @@ onAuthStateChanged(auth, (user) => {
 
     const storage = getStorage(app);
     const storageRef = ref(storage, `profile-pic/`);
+    const newRef = ref(storage, `update-pic/`);
     const photoId = document.querySelector("#miniImg");
     const bigPhotoId = document.querySelector("#profile-display-image");
+
+    // const userId = userCredential.user.uid;
     // const prPhoto = document.querySelector("#photo");
+
+    try {
+      const fileInput = document.getElementById("file");
+
+      // fileInput.addEventListener("change", function (e) {
+      // console.log(file + "hi");
+
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        const storageRef = ref(storage, `update-pic/${user.uid}`);
+        uploadBytes(storageRef, file)
+          .then((snapshot) => {
+            // alert("Uploaded a blob or file!");
+            alert("Refresh page");
+          })
+          .catch((e) => {
+            alert(e);
+          });
+      });
+      // });
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
 
     listAll(storageRef)
       .then((res) => {
@@ -93,6 +119,29 @@ onAuthStateChanged(auth, (user) => {
       .catch((error) => {
         // alert(error);
       });
+
+    listAll(newRef)
+      .then((res) => {
+        res.prefixes.forEach((folderRef) => {
+          // All the prefixes under listRef.
+          // You may call listAll() recursively on them.
+          // console.log(folderRef);
+        });
+        res.items.forEach((itemRef, i) => {
+          const picId = itemRef._location.path_.slice(11);
+          // console.log(picId);
+          if (user.uid === picId)
+            getDownloadURL(itemRef).then((url) => {
+              // prPhoto.scr = url;
+              photoId.src = url;
+              bigPhotoId.src = url;
+              console.log(url);
+            });
+        });
+      })
+      .catch((error) => {
+        // alert(error);
+      });
   } else {
     // alert("bad");
   }
@@ -100,37 +149,30 @@ onAuthStateChanged(auth, (user) => {
 
 // alert("hi");
 
-const cartBtn = document.querySelectorAll(".btn--cart");
-const products = document.querySelectorAll(".products");
+// const cartBtn = document.querySelectorAll(".btn--cart");
+// const products = document.querySelectorAll(".products");
 
-// const prodContainer = document.querySelector(".products-container");
+// // const prodContainer = document.querySelector(".products-container");
 
-cartBtn.forEach((btn, c) => {
-  btn.addEventListener("click", (e) => {
-    products.forEach((prod, p) => {
-      if (c === p) {
-        const productDetails =
-          document.querySelector(".product-details").textContent;
-        const productTitle = document.querySelector(".title").textContent;
-        const productPrice = document.querySelector(".price").textContent;
+// cartBtn.forEach((btn, c) => {
+//   btn.addEventListener("click", (e) => {
+//     products.forEach((prod, p) => {
+//       if (c === p) {
+//         const productDetails =
+//           document.querySelector(".product-details").textContent;
+//         const productTitle = document.querySelector(".title").textContent;
+//         const productPrice = document.querySelector(".price").textContent;
 
-        try {
-          const docRef = addDoc(collection(db, "cart"), {
-            productname: productDetails,
-            title: productTitle,
-            price: productPrice,
-          });
-        } catch (e) {
-          // alert("Error adding document: ", e);
-        }
-      }
-    });
-  });
-});
-
-// prodContainer.addEventListener("click", (e) => {
-//   const clicked = e.target.closest(".btn--cart");
-//   if (!clicked) return;
+//         try {
+//           const docRef = addDoc(collection(db, "cart"), {
+//             productname: productDetails,
+//             title: productTitle,
+//             price: productPrice,
+//           });
+//         } catch (e) {
+//           // alert("Error adding document: ", e);
+//         }
+//       }
+//     });
+//   });
 // });
-
-// console.log(prodContainer.childNodes);

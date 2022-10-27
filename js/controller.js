@@ -80,40 +80,77 @@ const prodContainer = document.querySelector(".products-container");
 
 const products = [
   {
-    name: "Ribbena",
+    name: "Coconut Oil",
     image: './img/coconut oil.avif" alt="coconut',
-    description: "joseph ebizimo loves magaret",
+    description: "Cold press coconut oil",
+    price: "1000",
+  },
+  {
+    name: "Neem Oil",
+    image: "./img/neem-oil.avif",
+    description: "Freshly made neem oil",
     price: "500",
   },
   {
-    name: "Janety",
-    image: "./img/hair dryer and coms.avif",
-    description: "man like Godstime",
-    price: "900",
+    name: "Beard Oil",
+    image: "./img/afro.jpg",
+    description: "Oil to improve beard growth",
+    price: "2500",
   },
   {
-    name: "Sweetheart",
-    image: "./img/afro.jpg",
-    description: "man like Okoro",
-    price: "9100",
+    name: "Anti-dandruff Shampoo",
+    image:
+      "https://post.healthline.com/wp-content/uploads/2020/07/533274-The-Best-Micellar-Shampoos-for-Clean-Shiny-Hair-732x549-Feature-732x549.jpg",
+    description: "Keep your hair dandruff free with our shampoo",
+    price: "2000",
   },
   {
-    name: "lol",
+    name: "Deep conditioner",
     image: "./img/afro.jpg",
-    description: "man like Okoro",
-    price: "970",
+    description: "Healthy hair conditioner",
+    price: "1500",
   },
   {
-    name: "heart",
+    name: "Lice treatment",
     image: "./img/afro.jpg",
-    description: "man like Okoro",
-    price: "900000",
+    description: "Effective remedy against lice",
+    price: "1000",
   },
   {
-    name: "Sweet",
+    name: "Hair bonnet",
     image: "./img/afro.jpg",
-    description: "man like Okoro",
-    price: "10",
+    description: "Silk hair bonnets for hair protection",
+    price: "500",
+  },
+  {
+    name: "Comb set",
+    image: "./img/afro.jpg",
+    description: "Effective break-no-more combs",
+    price: "1500",
+  },
+  {
+    name: "Protein Treatment",
+    image: "./img/afro.jpg",
+    description: "Healthy hair growth remedy",
+    price: "2000",
+  },
+  {
+    name: "Hair growth Kit",
+    image: "./img/afro.jpg",
+    description: "Complete hair growth set",
+    price: "10000",
+  },
+  {
+    name: "Hair cream",
+    image: "./img/afro.jpg",
+    description: "Healthy haircream mixture",
+    price: "500",
+  },
+  {
+    name: "Natural hair relaxer",
+    image: "./img/afro.jpg",
+    description: "Mild relaxer for natural hair",
+    price: "5000",
   },
 ];
 
@@ -211,47 +248,6 @@ function addItemToCart(title, price, image) {
 
   cartRow.innerHTML = html;
   cartItems.append(cartRow);
-  // const cartRow = document.createElement("tr");
-  // const cartItems = document.getElementsByClassName("table-body")[0];
-  // cartRow.classList.add(".tab-row");
-  // const actPrice = price.slice(6, -1);
-
-  // const html = `<tr class="tab-row">
-  // <td>
-  // <div class="cart-product-details">
-  //   <div class="cart-image-container">
-  //     <img src="${image}" alt="" />
-  //   </div>
-  //   <div class="image-description">
-  //     <ul>
-  //       <li class="productTitle">${title}</li>
-
-  //     </ul>
-  //   </div>
-  // </div>
-  // </td>
-  //  <td>
-  //     <div class="quantity">
-  //       <input class="qty-input" min="1" value="1" type="number" />
-  //     </div>
-  //   </td>
-
-  // <td>
-  //    <span class="cartPrice">${actPrice}</span>
-  // </td>
-
-  // <td>
-  // <span class="total">${actPrice}</span>
-  // </td>
-
-  // <td class="tableBtn">
-  // <button class="order">Order Now</button>
-  // <button class="delBtn">Delete</button>
-  // </td>
-  // </tr>`;
-
-  // cartRow.innerHTML = html;
-  // cartItems.append(cartRow);
 }
 
 function updateTotal() {
