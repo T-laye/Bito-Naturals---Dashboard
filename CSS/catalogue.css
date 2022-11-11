@@ -37,6 +37,7 @@
   color: #fff;
   transition: all 0.5s ease-in-out;
   width: 90%;
+  max-height: 45rem;
 }
 .products:hover {
   box-shadow: 0 14px 28px #161316;
@@ -67,7 +68,10 @@
 }
 
 .product-details h4 {
-  margin-bottom: 1rem;
+  margin: 5px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
   text-align: left;
 }
 
@@ -75,6 +79,7 @@
   font-size: 1.6rem;
   text-align: left;
   letter-spacing: 1px;
+  width: 90%;
 }
 
 .product-details span {
@@ -84,6 +89,10 @@
   margin: 1rem 0rem;
 }
 
+.btn-container {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
 .btn-container ion-icon {
   font-size: 2rem;
 }
@@ -103,7 +112,7 @@
   font-family: inherit;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .btn-container .btn:hover {
@@ -162,75 +171,6 @@
   list-style: none;
 }
 
-/* .shopping-cart {
-  padding: 0 2rem;
-} */
-
-.table-container {
-  /* overflow: auto; */
-}
-
-table {
-  /* width: 100%; */
-  /* max-width: 120rem; */
-  /* text-align: center; */
-  /* border-collapse: collapse; */
-  /* border: none; */
-  /* color: #fff; */
-  /* margin: 0 auto; */
-  /* padding: 20rem; */
-}
-
-/* table button {
-  
-  border-radius: 5px;
-  background-color: var(--primary-background-color);
-  font-size: 1.6rem;
-  font-family: inherit;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid #fff;
-} */
-
-/* table button:hover {
-  transform: scale(1.1);
-}
-
-table button:active {
-  transform: translateY(2px);
-} */
-
-/* td,
-th { */
-/* border: 2px solid #a7a7a7; */
-/* text-align: center;
-  padding: 8px 0; */
-/* height: 10rem; */
-/* } */
-
-/* thead,
-tr:nth-child(even) {
-  box-shadow: 0 14px 28px #0000004b;
-  background-color: var(--primary-background-color-gradient);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-} */
-
-/* tr > td :first-child > div:first-child {
-  width: 30%;
-}
-
-h4 {
-  margin-bottom: 2rem;
-} */
-
-/* .quantity {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem; */
-
 .quantity input {
   width: 5rem;
   height: 3rem;
@@ -240,22 +180,10 @@ h4 {
   font-size: 1.6rem;
   text-align: center;
 }
-/* .quantity button { */
-/* border: 0.01px solid #ffffff; */
-/* border: none;
-  padding: 5px;
-  font-size: 1.4rem;
-} */
 
 .list-container {
   display: flex;
-  /* background-color: blue; */
   flex-direction: column;
-  /* height: auto; */
-}
-
-ol {
-  /* overflow: scroll; */
 }
 
 .list__item {

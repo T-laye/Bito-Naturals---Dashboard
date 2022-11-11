@@ -2,6 +2,18 @@ nav {
   width: 70%;
 }
 
+.logo-container {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo {
+  /* margin: auto; */
+  width: 100%;
+}
+
 nav .nav-items {
   list-style: none;
   display: flex;

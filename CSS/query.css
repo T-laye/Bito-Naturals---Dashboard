@@ -204,8 +204,8 @@
     margin-top: 20%;
     font-size: 3.6rem;
   }
-}
 
-/* At 360px */
-@media screen and (max-width: 23em) {
+  .catalogue h2 {
+    font-size: 3.6rem;
+  }
 }
