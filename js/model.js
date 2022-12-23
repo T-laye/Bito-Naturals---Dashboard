@@ -1,8 +1,8 @@
 "use strict";
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-analytics.js";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import {
   getAuth,
   // connectAuthEmulator,
@@ -11,12 +11,8 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
   updateProfile,
-} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
+} from "firebase/auth";
+import { getFirestore, collection, addDoc } from "firebase/firestore/lite";
 
 import {
   getStorage,
@@ -24,7 +20,7 @@ import {
   uploadBytes,
   getDownloadURL,
   listAll,
-} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-storage.js";
+} from "firebase/storage";
 // import { firestore } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries

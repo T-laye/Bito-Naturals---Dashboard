@@ -1,0 +1,31 @@
+{
+  "name": "bito-dash-board",
+  "version": "1.0.0",
+  "description": "bito's dashboard",
+  "default": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/T-laye/Bito-Naturals---Dashboard.git"
+  },
+  "author": "Jane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/T-laye/Bito-Naturals---Dashboard/issues"
+  },
+  "homepage": "https://github.com/T-laye/Bito-Naturals---Dashboard#readme",
+  "devDependencies": {
+    "autoprefixer-core": "^6.0.1",
+    "csswring": "^7.0.0",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "firebase": "^9.15.0",
+    "parcel": "^2.8.2"
+  }
+}
