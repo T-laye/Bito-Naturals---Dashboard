@@ -1,0 +1,258 @@
+@media screen and (max-width: 72em) {
+  .products-container {
+    -ms-grid-columns: (1fr) [3];
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem 1rem;
+  }
+
+  .products {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .profile-content {
+    padding-top: 10%;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .profile-content {
+    flex-flow: column wrap;
+    display: flex;
+  }
+
+  .profile-content div {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 59em) {
+  .products-container {
+    -ms-grid-columns: (1fr) [2];
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 6rem 1rem;
+  }
+
+  .products {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 55em) {
+  nav {
+    width: 100%;
+    background-color: var(--primary-background-color);
+    height: 7rem;
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  nav .nav-items {
+    -ms-flex-pack: space-evenly;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
+
+  nav .nav-items li a {
+    padding: 1.4rem;
+  }
+
+  .nav-link--active {
+    box-shadow: 0 -2px #ddd;
+  }
+
+  .profile-content {
+    padding-top: 15%;
+  }
+
+  .order-image {
+    height: 35%;
+    width: 100%;
+  }
+
+  .order-image img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 45em) {
+  .products-container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 6rem 1rem;
+    display: flex;
+  }
+
+  .products {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 38em) {
+  .profile-section {
+    flex-direction: column;
+    margin: 0;
+    padding: 0 0 10rem;
+  }
+
+  .profile-content, .user-info {
+    width: 100%;
+  }
+
+  .user-info {
+    padding-top: 10%;
+  }
+
+  .profile-content {
+    padding-top: 0;
+  }
+
+  .profile-pic-wrapper {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .booking-form {
+    justify-content: center;
+  }
+
+  .book-now {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .items-header h2 {
+    margin-top: 15%;
+    font-size: 4.2rem;
+  }
+
+  .price-display {
+    margin: 0 0 2rem;
+  }
+
+  form .payment-btn {
+    margin: 0 0 3rem;
+  }
+}
+
+@media screen and (max-width: 28em) {
+  .header-container {
+    padding: 1.4rem;
+  }
+
+  nav ul li .menuName {
+    display: none;
+  }
+
+  nav ul li a ion-icon {
+    font-size: 2rem;
+  }
+
+  .products {
+    width: 70%;
+  }
+
+  .order-container {
+    width: 100vw;
+  }
+
+  .order-input {
+    width: 90%;
+    flex-direction: column;
+    gap: .8rem;
+    display: flex;
+  }
+
+  .order-content {
+    margin: 0 1rem;
+  }
+
+  .order-input input {
+    width: 100%;
+  }
+
+  .order-container h2 {
+    font-size: 2.8rem;
+  }
+
+  .order-image {
+    height: 25%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 26em) {
+  .mini-menu-items {
+    -ms-grid-row-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: center;
+    gap: 1rem;
+    padding: 2rem;
+    top: 100%;
+    right: 15%;
+  }
+
+  .color-palette {
+    width: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    left: 95%;
+  }
+
+  .booking-form {
+    max-width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .book-now {
+    max-width: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 1rem 2rem;
+  }
+
+  .items-header h2 {
+    margin-top: 20%;
+    font-size: 3.6rem;
+  }
+
+  .items-header ion-icon {
+    font-size: 4rem;
+  }
+
+  .catalogue h2 {
+    font-size: 3.6rem;
+  }
+
+  .order-input input {
+    padding: .7rem .5rem;
+  }
+}
+
+@media screen and (max-width: 25em) {
+  .quantity input {
+    width: 3rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 21em) {
+  .items-header h2 {
+    font-size: 2rem;
+  }
+
+  .items-header ion-icon {
+    font-size: 3rem;
+  }
+}
+
+/*# sourceMappingURL=index.b05b22e9.css.map */
