@@ -57,7 +57,7 @@ function initThemeSelector() {
   const currentTheme = localStorage.getItem("theme") || "default";
 
   function activateTheme(themeName) {
-    themeStyleLink.setAttribute("href", `./dest/${themeName}.css`);
+    themeStyleLink.setAttribute("href", `./dest/themes${themeName}.css`);
   }
 
   colorPalette.addEventListener("click", function (e) {

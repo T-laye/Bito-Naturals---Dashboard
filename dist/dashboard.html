@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogue | Bito-naturals</title>
+
+    <link
+      rel="shortcut icon"
+      href="/bito%20favicon.37618482.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" id="themeLink" href="./themes/default.css" />
+    <link rel="stylesheet" href="/dashboard.531de05e.css" />
+    <link rel="stylesheet" href="/dashboard.38215c6c.css" />
+    <link rel="stylesheet" href="/dashboard.4c9d0881.css" />
+    <link rel="stylesheet" href="/dashboard.04e8a5e2.css" />
+    <link rel="stylesheet" href="/dashboard.b05b22e9.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Noto+Sans+Display:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@400;500;700&family=Rubik:wght@400;500;600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="./CSS/themes.css"> -->
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo-container">
+          <img src="/IMG-20221111-WA0005.13f3ee98.jpg" alt="" class="logo" />
+        </div>
+
+        <nav>
+          <ul class="nav-items">
+            <li class="nav-item">
+              <a href="#" class="nav-link nav-link--active" data-tab="1"
+                ><ion-icon name="person"></ion-icon>
+                <span class="menuName">My Profile</span>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+                  <a href="#" class="nav-link"> Profile </a>
+                </li> -->
+            <li class="nav-item">
+              <a href="#" class="nav-link" data-tab="3"
+                ><ion-icon name="pricetags-outline"></ion-icon>
+                <span class="menuName">Catalogue</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" data-tab="2"
+                ><ion-icon name="cart-outline"></ion-icon>
+                <span class="menuName">Cart</span>
+                <span class="counter">0</span>
+              </a>
+            </li>
+
+            <!-- <img src="./img/neem-oil.avif" alt=""> -->
+            <!-- <li class="nav-item"><a href="#" class="nav-link"> More </a></li> -->
+            <!-- <div>
+                    <button class="btn btn-shop-now">Shop Now</button>
+                  </div> -->
+          </ul>
+        </nav>
+        <div class="mini-menu">
+          <ul class="mini-menu-items mini-menu-items--hidden">
+            <!-- <li class="nav-item">
+              <a href="#""
+                ><ion-icon name="home"></ion-icon> Home
+              </a>
+            </li> -->
+            <li>
+              <a href="https://bito-homepage.netlify.app/" target="_blank">
+                <ion-icon name="home"></ion-icon> <span>Home</span>
+              </a>
+            </li>
+            <li class="theme-container">
+              <a href="#" class="theme"
+                ><ion-icon name="color-palette"></ion-icon> <span>Theme</span>
+              </a>
+            </li>
+            <li class="color-palette">
+              <div class="colors" id="default"></div>
+              <div class="colors" id="green"></div>
+              <div class="colors" id="red"></div>
+              <div class="colors" id="blue"></div>
+              <div class="colors" id="black"></div>
+            </li>
+
+            <li>
+              <a href="https://bito-login.netlify.app/">
+                <ion-icon name="log-out"></ion-icon> <span>Sign-Out</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="mini-profile">
+          <div class="profile-pic--header">
+            <img
+              id="miniImg"
+              src="/profile%20pic%20default.1f12ca69.png"
+              alt="profile-pic"
+            />
+          </div>
+          <ion-icon class="down-caret" name="caret-down"></ion-icon>
+          <ion-icon
+            class="up-caret hide-caret"
+            name="caret-up-outline"
+          ></ion-icon>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section content--1 display--section">
+        <div id="profile" class="profile-section container">
+          <div class="user-info">
+            <h1 class="greeting">Hi, <span class="user"> </span> 😁</h1>
+            <div class="profile-pic-wrapper profile-pic-main">
+              <img
+                id="profile-display-image"
+                src="/profile%20pic%20default.1f12ca69.png"
+                alt="profile-pic"
+              />
+            </div>
+
+            <form action="" class="profile-form hide-form">
+              <div class="profile-pic-div">
+                <img
+                  id="photo"
+                  src="/profile%20pic%20default.1f12ca69.png"
+                  alt="profile-pic"
+                />
+                <input type="file" id="file" />
+                <label for="file" id="uploadBtn">Upload Photo</label>
+              </div>
+              <fieldset>
+                <legend>Personal Info</legend>
+
+                <!-- <input class="editProfile proName" readonly class="name" placeholder="Name" type="text"  > -->
+
+                <input
+                  class="editProfile proUserName"
+                  readonly=""
+                  placeholder="User Name"
+                  type="text"
+                />
+
+                <input
+                  readonly=""
+                  class="proEmail"
+                  placeholder="Email"
+                  type="email"
+                />
+
+                <!-- <input class="editProfile proPhone" readonly placeholder="Phone Number" type="tel" > -->
+
+                <input
+                  class="btn profile-btn-exit"
+                  value="Close"
+                  type="submit"
+                />
+              </fieldset>
+            </form>
+            <button class="btn profile-btn-view">View Profile</button>
+          </div>
+
+          <div class="profile-content">
+            <div class="content">
+              <p>
+                Our team of hair specailists are available to speak to you
+                pertaining to the condition of your hair.
+              </p>
+              <button class="btn book btn-book">Book Now</button>
+            </div>
+            <div class="content">
+              <p>
+                Keep track of your hair growth journey and routines. Your hair
+                care goals here.
+              </p>
+              <button class="btn book">Preview</button>
+            </div>
+            <div class="content">
+              <p>
+                Certified hair stylists are available across the globe to keep
+                your hair in great shape. We are at your service.
+              </p>
+              <button class="btn book btn-book">Contact Us</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-form">
+          <div class="schedules">
+            <div class="schedules-icon">
+              <ion-icon
+                name="close-circle-outline"
+                class="close-icon"
+              ></ion-icon>
+            </div>
+
+            <h2>Time OPen</h2>
+
+            <h3>Monday-Saturdays</h3>
+
+            <p>8am- 4pm (hairstyling)</p>
+            <p>10am- 9pm (hair consultation)</p>
+          </div>
+
+          <form class="book-form" action="" name="Booking" netlify="">
+            <fieldset class="book-now">
+              <h2 class="booking-heading">Book a Session</h2>
+
+              <input
+                name="Name"
+                type="text"
+                class="consultName"
+                placeholder="Your Name"
+                readonly=""
+              />
+              <input
+                name="Email"
+                type="email"
+                class="consultEmail"
+                placeholder="Your email"
+                readonly=""
+              />
+              <input
+                name="Phone Number"
+                type="tel"
+                class="consultNumber"
+                placeholder="Cell No."
+              />
+
+              <input name="Date" type="date" />
+              <input name="Time" type="time" />
+              <textarea
+                name="Description"
+                id=""
+                cols="20"
+                rows="2"
+                style="resize: none"
+                placeholder="Summary"
+              ></textarea>
+
+              <input type="submit" class="submit" />
+            </fieldset>
+          </form>
+        </div>
+      </section>
+
+      <section class="section catalogue container content--3">
+        <h2>
+          <span><ion-icon name="pricetags-outline"></ion-icon></span>
+          Products Catalogue
+        </h2>
+
+        <div class="products-container">
+          <!-- <div class="products">
+              <div class="product-img-container">
+                <img src="./img/coconut oil.avif" alt="coconut" />
+              </div>
+              <div class="product-details">
+                <h4>Product Name</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <span>Price:</span> <span class="price"> 50$</span>
+                <div class="btn-container">
+                  <button class="btn btn--cart ">
+                    <span> Add to Cart</span>
+                    <ion-icon name="cart"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div> -->
+          <!-- ////// -->
+        </div>
+      </section>
+
+      <section id="cart" class="section container section-display content--2">
+        <div class="items">
+          <div class="items-header">
+            <h2>
+              <ion-icon name="cart-outline"></ion-icon>
+              Shopping Cart
+            </h2>
+          </div>
+          <div class="list-container">
+            <ol class="list">
+              <!-- <li class="list__item">
+                    <div  class="cart-product-details">
+                       <div class="cart-image-container">
+                          <img src="./img/coconut oil.avif" alt="" />
+                        </div>
+                        <div class="image-description">
+                          <h3>Coconut Oil</h3>
+                        </div>
+                    </div>
+                    <div>
+                      Price :
+                      <span class="price"> 250 </span>
+                    </div>
+                    <div class="quantity">
+                      Qty :
+                        <input class="qty-input" min="1" value="1" type="number" /> 
+                      </div>
+                      <div>
+                        Total:
+                        <span class="total">5000</span>
+                      </div>
+  
+                      <div class="cartBtn">
+                        <button class="btn order">Order Now</button>
+                        
+                        <button class="btn delBtn">🗑</button>
+                      </div>
+                  </li> -->
+            </ol>
+          </div>
+
+          <!-- OrderNow slidein//////////////// -->
+          <div class="order-container">
+            <div class="order-image">
+              <div class="order-close-icon">
+                <ion-icon
+                  name="close-circle-outline"
+                  class="close-icon"
+                ></ion-icon>
+              </div>
+              <!-- <img src="./img/denisse-leon-udFxtLRzB0A-unsplash.jpg" alt=""> -->
+            </div>
+
+            <form name="Order" netlify="" action="#" class="order-form">
+              <div class="order-content">
+                <h2>Order Summary</h2>
+
+                <fieldset class="order-input">
+                  <input
+                    name="Name"
+                    class="customerName"
+                    type="text"
+                    placeholder="Name"
+                  />
+                  <input
+                    name="Phone Number"
+                    type="tel"
+                    class="customerNumber"
+                    placeholder="Phone number"
+                  />
+                  <input
+                    name="Quantity Ordered"
+                    type="number"
+                    class="qtyOrdered"
+                    placeholder="Quantity"
+                    readonly=""
+                  />
+                  <input
+                    name="Name of Product"
+                    type="text"
+                    class="productOrdered"
+                    placeholder="Product Name"
+                    readonly=""
+                  />
+                </fieldset>
+                <div class="price-display">
+                  <p>
+                    Total cost: ₦<input
+                      name="Total"
+                      class="orderTotal"
+                      type=""
+                      readonly=""
+                      value=""
+                    />
+                  </p>
+                </div>
+
+                <button type="submit" class="btn payment-btn">
+                  Place Order
+                </button>
+                <!-- <button class="cancel-btn">Cancel Order</button> -->
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- //////////////////// -->
+
+    <script src="/dashboard.0a2bc43a.js"></script>
+    <script src="/dashboard.ede04314.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      defer=""
+    ></script>
+    <script
+      type="module"
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      defer=""
+    ></script>
+    <script src="/dashboard.ea3edc65.js" defer=""></script>
+  </body>
+</html>

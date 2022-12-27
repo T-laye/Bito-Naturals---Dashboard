@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background: url("two.442d7682.jpeg");
+  background-position: top;
+  background-repeat: none;
+  min-height: 100vh;
+  background-size: cover;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.6rem;
+  overflow-x: hidden;
+}
+
+header {
+  color: var(--primary-background-color);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.header-container {
+  height: 7rem;
+  max-width: 130rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 5rem;
+  display: flex;
+}
+
+.company-name {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.btn {
+  background-color: var(--primary-background-color);
+  color: #fff;
+  cursor: pointer;
+  width: 50%;
+  -ms-grid-row-align: center;
+  border: none;
+  border-radius: 5px;
+  align-self: center;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+section {
+  display: none;
+}
+
+.display--section {
+  display: block;
+}

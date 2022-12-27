@@ -4,8 +4,8 @@
   "description": "bito's dashboard",
   "default": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir ./dist"
+    "start": "parcel dashboard.html",
+    "build": "parcel build dashboard.html --dist-dir ./dist"
   },
   "repository": {
     "type": "git",
